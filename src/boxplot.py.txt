@@ -1,0 +1,29 @@
+import pandas as pd
+from sklearn.datasets import fetch_california_housing
+import matplotlib.pyplot as plt
+
+#--- Create a boxplot ---
+# for tis example, let's create a boxplot of  'Medinc' (Median Income)
+
+import pandas as pd
+from sklearn.datasets import fetch_california_housing
+import matplotlib.pyplot as plt
+
+# Load California Housing dataset
+housing = fetch_california_housing(as_frame=True)
+df = housing.frame
+
+# --- Create a boxplot ---
+# For this example, let's create a boxplot of 'MedInc' (Median Income)
+# You can choose any numerical column you find interesting.
+plt.figure(figsize=(8, 6))
+df['MedInc'].plot(kind='box')
+plt.title('Boxplot of Median Income in California Housing')
+plt.ylabel('Median Income')
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+# --- Save the figure ---
+# This will save the plot to the 'figs' directory in the parent folder.
+
+plt.savefig('../figs/boxplot.png')
+plt.close() # Close the plot to free memory
